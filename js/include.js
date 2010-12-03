@@ -100,8 +100,6 @@ uInstapaper =
                 + 'password=' + password + '&'
                 + 'url=' + opera.extension.tabs.getFocused().url.replace(/https?:\/\//, '');
 
-        opera.postError('Sending ' + data);
-
         uInstapaper.xhr = new XMLHttpRequest();
         uInstapaper.xhr.onreadystatechange = uInstapaper.addChangedStateListener;
         uInstapaper.xhr.open("GET", iUrl + '?' + data, true);
@@ -121,7 +119,6 @@ uInstapaper =
     {
         if (uInstapaper.xhr)
         {
-            opera.postError('Changed state: ' + uInstapaper.xhr.status + ': ' + uInstapaper.xhr.statusText);
             if (uInstapaper.xhr.readyState == 4)
             {
                 if (uInstapaper.xhr.status == 201)
