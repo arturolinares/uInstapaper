@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets">
+	<name>uInstapaper</name>
+	<description>Adds pages to Instapaper account. This is not the official extension.</description>
+	<author href="http://twitter.com/arturo_linares">Arturo Linares (@arturo_linares)</author>
+  <access origin='https://www.instapaper.com' subdomains="true" />
+</widget>
