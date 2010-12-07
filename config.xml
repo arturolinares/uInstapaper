@@ -4,4 +4,5 @@
 	<description>Adds pages to Instapaper account. This is not the official extension.</description>
 	<author href="https://github.com/arturolinares/uInstapaper">Arturo Linares (@arturo_linares)</author>
   <access origin='https://www.instapaper.com/api/add' subdomains="true" />
+  <icon src="icons/big_icon.png" />
 </widget>
