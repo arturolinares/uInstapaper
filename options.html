@@ -42,14 +42,10 @@ login = function()
     opera.postError('Logging in..');
     uInstaLogin.loginListener = function()
     {
-        opera.postError('Logging in.. good pass');
         document.getElementById('status').textContent = 'Logged in!';
     };
     uInstaLogin.errorListener = function()
     {
-        opera.postError('Logging in.. bad pass: '
-            + widget.preferences.username
-            + ' - password: ' + widget.preferences.password);
         document.getElementById('status').textContent = 'Wrong user name or password.';
     };
     uInstaLogin.auth();
