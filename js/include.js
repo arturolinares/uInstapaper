@@ -99,7 +99,7 @@ uInstapaper =
         var data = 'username=' + username + '&'
                 + 'password=' + password + '&'
                 + 'url=' + opera.extension.tabs.getFocused().url.replace(/https?:\/\//, '');
-
+        data = data.replace('+', '%2B');
         uInstapaper.xhr = new XMLHttpRequest();
         uInstapaper.xhr.onreadystatechange = uInstapaper.addChangedStateListener;
         uInstapaper.xhr.open("GET", iUrl + '?' + data, true);

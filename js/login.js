@@ -16,6 +16,7 @@ uInstaLogin =
         var iUrl = 'https://www.instapaper.com/api/authenticate';
 
         var data = 'username=' + username + '&password=' + password;
+        data = data.replace('+', '%2B');
         uInstaLogin.xhr = new XMLHttpRequest();
         uInstaLogin.xhr.onreadystatechange = uInstaLogin.addChangedStateListener;
         uInstaLogin.xhr.open("GET", iUrl + '?' + data, true);
