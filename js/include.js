@@ -96,14 +96,18 @@ uInstapaper =
         var password = widget.preferences.password;
         var iUrl = uInstapaper.addUrl;
 
-        var data = 'username=' + username + '&'
+        var tab = opera.extension.tabs.getFocused();
+        if (tab != null)
+        {
+            var data = 'username=' + username + '&'
                 + 'password=' + password + '&'
-                + 'url=' + opera.extension.tabs.getFocused().url.replace(/https?:\/\//, '');
-        data = data.replace('+', '%2B');
-        uInstapaper.xhr = new XMLHttpRequest();
-        uInstapaper.xhr.onreadystatechange = uInstapaper.addChangedStateListener;
-        uInstapaper.xhr.open("GET", iUrl + '?' + data, true);
-        uInstapaper.xhr.send(null);
+                + 'url=' + tab.url.replace(/https?:\/\//, '');
+            data = data.replace('+', '%2B');
+            uInstapaper.xhr = new XMLHttpRequest();
+            uInstapaper.xhr.onreadystatechange = uInstapaper.addChangedStateListener;
+            uInstapaper.xhr.open("GET", iUrl + '?' + data, true);
+            uInstapaper.xhr.send(null);
+        }
     },
 
     addSuccess: function()
